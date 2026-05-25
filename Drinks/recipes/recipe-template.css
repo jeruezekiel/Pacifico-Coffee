@@ -1,0 +1,267 @@
+.recipe-back {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 120px 80px 0;
+  margin-bottom: 40px;
+  transition: color 0.2s;
+}
+.recipe-back::before { content: '← '; }
+.recipe-back:hover { color: var(--accent); }
+
+.recipe-head { padding: 0 80px 48px; }
+
+.recipe-short-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  margin-bottom: 28px;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.recipe-short-note .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.recipe-head-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.recipe-head-desc {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 480px;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.recipe-head-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.recipe-head-text {
+  flex: 0 0 auto;
+  max-width: 480px;
+}
+
+.recipe-head-image-wrap {
+  width: 580px;
+  margin-left: 40px;
+  align-self: flex-start;
+  margin-top: 12px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.recipe-head-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.recipe-head-image-wrap:hover .recipe-head-img {
+  transform: scale(1.04);
+}
+
+.recipe-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 40px 80px 80px;
+  background: var(--section);
+}
+
+.recipe-main,
+.recipe-sidebar {
+  padding: 56px 48px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-main    { background: var(--surface); }
+.recipe-sidebar { background: var(--bg); }
+
+.recipe-origin {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.recipe-panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+.recipe-panel-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+
+.recipe-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border: 1px solid var(--tag);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.recipe-panel-badge::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.recipe-panel-badge.cold { border-color: #5A8FB0; color: #5A8FB0; }
+.recipe-panel-badge.cold::before { background: #5A8FB0; }
+.recipe-panel-badge.hot  { border-color: #C8855A; color: #C8855A; }
+.recipe-panel-badge.hot::before  { background: #C8855A; }
+
+.tasting-notes-label,
+.sidebar-section-title,
+.brew-recipe-title {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.sidebar-section-title { margin-bottom: 32px; }
+.brew-recipe-title     { margin-bottom: 28px; }
+
+.tasting-notes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+
+.note-tag {
+  padding: 6px 16px;
+  border: 1px solid var(--tag);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.recipe-drink-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.recipe-drink-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.92) saturate(1.05);
+  transition: transform 0.6s ease;
+}
+
+.recipe-drink-image:hover img { transform: scale(1.03); }
+
+.specs-grid { display: flex; flex-direction: column; gap: 24px; margin-bottom: 56px; }
+
+.spec-block { border-left: 1px solid var(--border); padding-left: 20px; }
+
+.spec-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.spec-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--light);
+}
+
+.recipe-steps { display: flex; flex-direction: column; }
+
+.recipe-step {
+  display: flex;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.recipe-step:first-child { border-top: 1px solid var(--border); }
+
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  padding-top: 2px;
+  min-width: 28px;
+}
+
+.step-text { font-size: 1rem; line-height: 1.75; color: var(--text); }
+
+.step-text strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--light);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .recipe-layout          { grid-template-columns: 1fr; }
+  .recipe-main,
+  .recipe-sidebar         { padding: 36px 28px; }
+  .recipe-head-row        { flex-direction: column; align-items: flex-start; }
+  .recipe-head-image-wrap { width: 100%; margin-left: 0; margin-top: 8px; }
+  .recipe-head-desc       { max-width: 100%; margin-bottom: 16px; }
+}
+
+@media (max-width: 768px) {
+  .recipe-back            { padding: 100px 24px 0; }
+  .recipe-head            { padding: 0 24px 40px; }
+  .recipe-layout          { padding: 24px 24px 60px; }
+  .recipe-head-title      { font-size: 2.8rem; }
+  #navbar                 { flex-direction: column; align-items: center; padding: 16px 0 0; gap: 0; }
+  .nav-logo               { margin-bottom: 12px; }
+  .nav-links              { width: 100%; justify-content: center; border-top: 1px solid var(--border); padding: 10px 0; }
+  .nav-links li a         { padding: 8px 16px; font-size: 0.7rem; }
+  .nav-links li:last-child { position: absolute; top: 16px; right: 16px; }
+}

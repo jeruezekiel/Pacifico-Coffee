@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacifico Coffee</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Pacifico <span>Coffee</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="../Drinks/drinks.html">Drinks</a></li>
+      <li><a href="../COTD/cotd.html">COTD</a></li>
+      <li>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-dropdown" id="navDropdown">
+    <p class="nav-dropdown-label">Menu</p>
+    <div class="nav-dropdown-links">
+      <a href="../About/about.html">About</a>
+      <a href="../ContactUs/contactus.html">Contact Us</a>
+    </div>
+    <div class="nav-dropdown-brand">
+      <p class="nav-dropdown-brand-name">Pacifico <span>Coffee</span></p>
+      <p class="nav-dropdown-brand-tagline">Find your coffee, find your peace</p>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-line"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Est. 2026 &nbsp;·&nbsp; Craft Coffee Recipes</p>
+        <h1 class="hero-title">Pacifico<br><em>Coffee</em></h1>
+        <p class="hero-sub">Find your coffee, find your peace</p>
+        <a href="../Drinks/drinks.html" class="btn-outline">Explore Drinks</a>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="intro-text">
+        <p class="intro-eyebrow">Good coffee, made easy</p>
+        <h2 class="intro-head">Come make <span class="accent">coffee</span> with us</h2>
+        <p class="intro-desc">Find your perfect cup with simple recipes made for you. It's all about good coffee and a bit of peace.</p>
+      </div>
+      <div class="intro-images">
+        <img src="../Drinks/drinks-image/home-espresso.png" alt="Espresso" class="intro-img intro-img--espresso" />
+        <img src="../Drinks/drinks-image/home-iced.png" alt="Iced Coffee" class="intro-img intro-img--iced" />
+      </div>
+    </section>
+
+    <section class="recipe-highlight">
+      <div class="recipe-highlight-header">
+        <h2 class="recipe-highlight-title">Make your <span class="accent">coffee</span> with our recipe</h2>
+        <p class="recipe-highlight-desc">Simple steps, balanced taste, and a moment of peace in every cup.</p>
+      </div>
+      <div class="recipe-cards">
+        <div class="recipe-card">
+          <div class="recipe-card-img-wrap">
+            <img src="../Drinks/drinks-image/americano.jpg" alt="Americano" class="recipe-card-img" />
+          </div>
+          <div class="recipe-card-body">
+            <h3 class="recipe-card-name">Americano</h3>
+            <p class="recipe-card-desc">Smooth and mellow, made by adding hot water to espresso.</p>
+            <a href="../Drinks/recipes/americano.html" class="btn-outline recipe-card-btn">See full recipe</a>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-card-img-wrap">
+            <img src="../Drinks/drinks-image/caramel-macchiato.png" alt="Caramel Macchiato" class="recipe-card-img" />
+          </div>
+          <div class="recipe-card-body">
+            <h3 class="recipe-card-name">Caramel Macchiato</h3>
+            <p class="recipe-card-desc">Sweet and layered with milk, espresso, and caramel drizzle.</p>
+            <a href="../Drinks/recipes/caramel-macchiato.html" class="btn-outline recipe-card-btn">See full recipe</a>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-card-img-wrap">
+            <img src="../Drinks/drinks-image/spanish-latte.png" alt="Spanish Latte" class="recipe-card-img" />
+          </div>
+          <div class="recipe-card-body">
+            <h3 class="recipe-card-name">Spanish Latte</h3>
+            <p class="recipe-card-desc">Rich and sweet, made with espresso, milk, and condensed milk.</p>
+            <a href="../Drinks/recipes/spanish-latte.html" class="btn-outline recipe-card-btn">See full recipe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured">
+      <p class="section-label">What We Offer</p>
+      <div class="featured-grid">
+        <a href="../Drinks/drinks.html" class="featured-card">
+          <span class="card-index">01</span>
+          <h3 class="card-title">Drink Recipes</h3>
+          <p class="card-desc">A collection of simple coffee and café drinks you can make at home. Simple steps, good flavor, and nothing extra.</p>
+          <span class="card-arrow">View Recipes →</span>
+        </a>
+        <a href="../COTD/cotd.html" class="featured-card">
+          <span class="card-index">02</span>
+          <h3 class="card-title">Coffee of the Day</h3>
+          <p class="card-desc">A new coffee featured each day. A chance to explore different tastes, origins, and brewing styles.</p>
+          <span class="card-arrow">Today's Pick →</span>
+        </a>
+        <a href="../About/about.html" class="featured-card">
+          <span class="card-index">03</span>
+          <h3 class="card-title">Our Philosophy</h3>
+          <p class="card-desc">At Pacifico, coffee is kept simple and intentional. We focus on quality, balance, and creating a calm, peaceful coffee experience.</p>
+          <span class="card-arrow">About Us →</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-text">Today's featured cup</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <section class="cotd-strip">
+      <div class="cotd-strip-left">
+        <img class="cotd-img" id="cotdImg" src="" alt="" />
+        <div>
+          <p class="cotd-label">Coffee of the Day</p>
+          <h2 class="cotd-name"></h2>
+          <p class="cotd-note"></p>
+        </div>
+      </div>
+      <a href="../COTD/cotd.html" class="btn-outline">See Full Recipe</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">Pacifico <span>Coffee</span></span>
+        <span class="footer-tagline">Find your coffee, find your peace.</span>
+      </div>
+      <div class="footer-links">
+        <a href="../About/about.html">About Us</a>
+        <a href="../Drinks/drinks.html">Our Drinks</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=pacifico.jeru@gmail.com" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/pacifico_coffee/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61588950512796" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Pacifico Coffee. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () =>
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20)
+    );
+
+    const menuBtn  = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('navDropdown');
+    const overlay  = document.getElementById('navOverlay');
+    const openMenu  = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.add('open'));
+    const closeMenu = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.remove('open'));
+
+    menuBtn.addEventListener('click', () => dropdown.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    dropdown.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    const drinks = [
+      { name: "Espresso",             img: "espresso.jpg",          note: "A rich, concentrated shot of coffee with a bold and intense flavor. The foundation of almost every coffee drink." },
+      { name: "Americano",            img: "americano.jpg",         note: "Smooth and mellow, made by adding hot water to espresso for a lighter yet full-bodied cup. Simple, honest, and endlessly satisfying." },
+      { name: "Flat White",           img: "flatwhite.jpg",         note: "Velvety and creamy with a strong coffee taste and a fine, silky milk texture poured over a ristretto base. Concentrated, smooth, and deeply satisfying." },
+      { name: "Mocha",                img: "mocha.png",             note: "A rich meeting of espresso, steamed milk, and deep cocoa. Indulgent and warming, with just enough bitterness to keep it honest." },
+      { name: "Affogato",             img: "affogato.jpg",          note: "A simple Italian dessert coffee. A hot espresso shot poured over cold, creamy vanilla ice cream. Two ingredients, one perfect contrast of hot and cold, bitter and sweet." },
+      { name: "Caramel Macchiato",    img: "caramel-macchiato.png", note: "Sweet and beautifully layered — vanilla milk, espresso, and a generous caramel drizzle over ice." },
+      { name: "Vanilla Latte",        img: "vanilla-latte.jpg",     note: "Smooth and lightly sweet with a clean vanilla flavor and creamy cold milk over ice. A refreshing twist on the classic latte, made for warm days and easy mornings." },
+      { name: "Spanish Latte",        img: "spanish-latte.png",     note: "Rich and creamy with a natural sweetness from condensed milk layered beneath bold espresso and cold milk. Sweet, smooth, and deeply satisfying." },
+      { name: "Cinnamon Latte",       img: "cinnamon-latte.png",    note: "Warm cinnamon spice blended into a creamy, slightly sweet iced coffee with a fragrant finish." },
+      { name: "Hazelnut Latte",       img: "hazelnut-latte.jpg",    note: "Smooth, nutty, and gently sweet — hazelnut syrup brings a toasty warmth to this classic iced latte. Effortless to make, impossible to put down." },
+      { name: "White Mocha",          img: "white-mocha.png",       note: "Creamy and indulgently sweet with a rich white chocolate base, espresso, and cold milk over ice. A luscious treat that blurs the line between coffee and dessert." },
+      { name: "Brown Sugar Espresso", img: "brown-sugar.png",       note: "Sweet, bold, and smooth — espresso shaken with brown sugar syrup and poured over oat milk for a caramel-like finish." }
+    ];
+
+    const day  = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+    const cotd = drinks[day % drinks.length];
+
+    document.querySelector('.cotd-name').textContent = cotd.name;
+    document.querySelector('.cotd-note').textContent = cotd.note;
+    const img = document.getElementById('cotdImg');
+    img.src = `../Drinks/drinks-image/${cotd.img}`;
+    img.alt = cotd.name;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Drinks — page-specific styles */
+
+.page-hero-row {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.page-hero-title { font-size: 5.5rem; }
+
+.page-hero-sub {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.page-hero-image-wrap {
+  width: 580px;
+  margin-left: 24px;
+  align-self: flex-start;
+  margin-top: 12px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.page-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.page-hero-image-wrap:hover .page-hero-img { transform: scale(1.04); }
+
+.filter-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.filter-btn {
+  padding: 8px 22px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--muted);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.content-section {
+  background: var(--section);
+}
+
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.drink-card {
+  background: var(--bg);
+  padding: 40px 36px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.drink-card:hover { background: var(--surface); }
+
+.drink-tag {
+  font-size: 0.63rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.drink-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--light);
+  margin-bottom: 10px;
+}
+
+.drink-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; }
+
+.drink-meta { margin-top: 24px; display: flex; gap: 24px; }
+
+.drink-meta span {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.drink-meta strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.temp-hot  { color: #C8855A !important; }
+.temp-cold { color: #5A8FB0 !important; }
+
+@media (max-width: 900px) {
+  .drinks-grid          { grid-template-columns: 1fr; }
+  .page-hero-row        { flex-direction: column; align-items: flex-start; }
+  .page-hero-image-wrap { width: 100%; margin-left: 0; margin-top: 20px; }
+  .page-hero-sub        { max-width: 100%; }
+  .page-hero-title      { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+  #navbar               { flex-direction: column; align-items: center; padding: 16px 0 0; gap: 0; }
+  .nav-logo             { margin-bottom: 12px; }
+  .nav-links            { width: 100%; justify-content: center; border-top: 1px solid var(--border); padding: 10px 0; }
+  .nav-links li a       { padding: 8px 16px; font-size: 0.7rem; }
+  .nav-links li:last-child { position: absolute; top: 16px; right: 16px; }
+  .page-hero-title      { font-size: 2.8rem; }
+}

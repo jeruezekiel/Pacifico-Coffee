@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinks — Pacifico Coffee</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="drinks.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../Home/index.html" class="nav-logo">Pacifico <span>Coffee</span></a>
+    <ul class="nav-links">
+      <li><a href="../Home/index.html">Home</a></li>
+      <li><a href="drinks.html" class="active">Drinks</a></li>
+      <li><a href="../COTD/cotd.html">COTD</a></li>
+      <li>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-dropdown" id="navDropdown">
+    <p class="nav-dropdown-label">Menu</p>
+    <div class="nav-dropdown-links">
+      <a href="../About/about.html">About</a>
+      <a href="../ContactUs/contactus.html">Contact Us</a>
+    </div>
+    <div class="nav-dropdown-brand">
+      <p class="nav-dropdown-brand-name">Pacifico <span>Coffee</span></p>
+      <p class="nav-dropdown-brand-tagline">Find your coffee, find your peace.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <div class="page-hero">
+      <p class="page-hero-label">Recipe Collection</p>
+
+      <div class="page-hero-row">
+        <div class="page-hero-text">
+          <h1 class="page-hero-title">Our <em>Drinks</em></h1>
+          <p class="page-hero-sub">Every great day starts with a great coffee. Pick your favorite, try something new, and create a drink that matches your mood.</p>
+        </div>
+        <div class="page-hero-image-wrap">
+          <img src="drinks-image/drinks-coffee.png" alt="Pacifico Coffee Drinks" class="page-hero-img" />
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hot">Hot</button>
+        <button class="filter-btn" data-filter="cold">Cold</button>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="drinks-grid" id="drinks-grid">
+
+        <a href="recipes/espresso.html" class="drink-card" data-temp="hot">
+          <p class="drink-tag">Espresso</p>
+          <h3 class="drink-name">Espresso</h3>
+          <p class="drink-desc">A rich, concentrated shot of coffee with a bold and intense flavor.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Medium</strong></div>
+            <div><span>Serving</span><strong class="temp-hot">Hot</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/americano.html" class="drink-card" data-temp="hot">
+          <p class="drink-tag">Espresso</p>
+          <h3 class="drink-name">Americano</h3>
+          <p class="drink-desc">Smooth and mellow, made by adding hot water to espresso.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>3</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-hot">Hot</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/flatwhite.html" class="drink-card" data-temp="hot">
+          <p class="drink-tag">Milk-Based</p>
+          <h3 class="drink-name">Flat White</h3>
+          <p class="drink-desc">Velvety and creamy with a strong coffee taste and fine milk texture.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>5</strong></div>
+            <div><span>Difficulty</span><strong>Medium</strong></div>
+            <div><span>Serving</span><strong class="temp-hot">Hot</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/mocha.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Milk-Based</p>
+          <h3 class="drink-name">Mocha</h3>
+          <p class="drink-desc">A chocolatey coffee drink that blends espresso, milk, and cocoa.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>5</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/affogato.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Affogato</p>
+          <h3 class="drink-name">Affogato</h3>
+          <p class="drink-desc">A simple dessert coffee made with espresso poured over creamy vanilla ice cream.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>3</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/caramel-macchiato.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">Caramel Macchiato</h3>
+          <p class="drink-desc">Sweet and layered with milk, espresso, and caramel drizzle.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>5</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/vanilla-latte.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">Vanilla Latte</h3>
+          <p class="drink-desc">Smooth and lightly sweet with vanilla flavor and creamy milk.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/spanish-latte.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">Spanish Latte</h3>
+          <p class="drink-desc">Rich and sweet, made with espresso, milk, and condensed milk.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/cinnamon-latte.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">Cinnamon Latte</h3>
+          <p class="drink-desc">Warm cinnamon flavor mixed with creamy, slightly sweet coffee.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/hazelnut-latte.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">Hazelnut Latte</h3>
+          <p class="drink-desc">Smooth and nutty with a gentle sweetness.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/white-mocha.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Iced</p>
+          <h3 class="drink-name">White Mocha</h3>
+          <p class="drink-desc">Creamy and sweet with a rich white chocolate flavor.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>4</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+        <a href="recipes/brown-sugar-espresso.html" class="drink-card" data-temp="cold">
+          <p class="drink-tag">Cold Brew</p>
+          <h3 class="drink-name">Brown Sugar Espresso</h3>
+          <p class="drink-desc">Sweet and bold with a hint of caramel-like brown sugar flavor.</p>
+          <div class="drink-meta">
+            <div><span>Steps</span><strong>5</strong></div>
+            <div><span>Difficulty</span><strong>Easy</strong></div>
+            <div><span>Serving</span><strong class="temp-cold">Cold</strong></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">Pacifico <span>Coffee</span></span>
+        <span class="footer-tagline">Find your coffee, find your peace.</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="../About/about.html">About Us</a>
+        <a href="../Drinks/drinks.html">Our Drinks</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=pacifico.jeru@gmail.com" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/pacifico_coffee/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61588950512796" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Pacifico Coffee. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () =>
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20)
+    );
+
+    const menuBtn  = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('navDropdown');
+    const overlay  = document.getElementById('navOverlay');
+    const openMenu  = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.add('open'));
+    const closeMenu = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.remove('open'));
+
+    menuBtn.addEventListener('click', () => dropdown.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    dropdown.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.drink-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.temp === filter) ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

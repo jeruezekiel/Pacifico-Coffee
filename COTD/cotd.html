@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee of the Day — Pacifico Coffee</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="cotd.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../Home/index.html" class="nav-logo">Pacifico <span>Coffee</span></a>
+    <ul class="nav-links">
+      <li><a href="../Home/index.html">Home</a></li>
+      <li><a href="../Drinks/drinks.html">Drinks</a></li>
+      <li><a href="cotd.html" class="active">COTD</a></li>
+      <li>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-dropdown" id="navDropdown">
+    <p class="nav-dropdown-label">Menu</p>
+    <div class="nav-dropdown-links">
+      <a href="../About/about.html">About</a>
+      <a href="../ContactUs/contactus.html">Contact Us</a>
+    </div>
+    <div class="nav-dropdown-brand">
+      <p class="nav-dropdown-brand-name">Pacifico <span>Coffee</span></p>
+      <p class="nav-dropdown-brand-tagline">Find your coffee, find your peace.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <p class="page-hero-label">Daily Feature</p>
+      <h1 class="page-hero-title">Coffee of <em>the Day</em></h1>
+      <p class="page-hero-sub">Today's featured brew, offering a simple yet satisfying cup worth savoring.</p>
+    </div>
+
+    <div class="content-section">
+      <div class="cotd-date-pill">
+        <span class="dot"></span>
+        <span id="today-date"></span>
+      </div>
+
+      <div class="cotd-layout">
+        <div class="cotd-main">
+          <p class="cotd-origin" id="cotd-temp"></p>
+          <h2 class="cotd-big-name" id="cotd-name"></h2>
+          <p class="cotd-body" id="cotd-desc"></p>
+          <p class="side-label">Tasting Notes</p>
+          <div class="tasting-notes" id="cotd-notes"></div>
+          <div class="cotd-image-wrap">
+            <img id="cotd-image" src="" alt="" />
+          </div>
+        </div>
+
+        <div class="cotd-sidebar">
+          <p class="side-label">Brew Specs</p>
+          <div class="specs-grid" id="cotd-specs"></div>
+          <p class="side-label">Brew Recipe</p>
+          <div id="cotd-steps"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">Pacifico <span>Coffee</span></span>
+        <span class="footer-tagline">Find your coffee, find your peace.</span>
+      </div>
+      <div class="footer-links">
+        <a href="../About/about.html">About Us</a>
+        <a href="../Drinks/drinks.html">Our Drinks</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=pacifico.jeru@gmail.com" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/pacifico_coffee/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61588950512796" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Pacifico Coffee. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () =>
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20)
+    );
+
+    const menuBtn  = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('navDropdown');
+    const overlay  = document.getElementById('navOverlay');
+    const openMenu  = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.add('open'));
+    const closeMenu = () => [menuBtn, dropdown, overlay].forEach(el => el.classList.remove('open'));
+
+    menuBtn.addEventListener('click', () => dropdown.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    dropdown.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    const drinks = [
+      {
+        name: "Espresso", image: "espresso.jpg", temp: "Hot",
+        desc: "A rich, concentrated shot of coffee with a bold and intense flavor. The foundation of almost every coffee drink.",
+        notes: ["Bold", "Intense", "Rich", "Crema", "Concentrated"],
+        specs: [
+          { label: "Method",          value: "Espresso Machine" },
+          { label: "Espresso Beans",  value: "18g" },
+          { label: "Filtered Water",  value: "36ml" },
+          { label: "Yield",           value: "36ml" },
+          { label: "Grind Size",      value: "Fine (like table salt)" },
+          { label: "Extraction Time", value: "25–30 seconds" }
+        ],
+        steps: [
+          { num: "01", title: "Grind the Beans",   desc: "Grind 18g of espresso beans to a fine consistency, similar to table salt." },
+          { num: "02", title: "Dose and Tamp",     desc: "Fill the portafilter with the ground coffee and tamp firmly with even, level pressure." },
+          { num: "03", title: "Pull the Shot",     desc: "Lock the portafilter into the machine and begin extraction. Aim for 36ml of espresso in 25–30 seconds." },
+          { num: "04", title: "Serve Immediately", desc: "Pour into a pre-warmed espresso cup and serve at once for the best crema and flavor." }
+        ]
+      },
+      {
+        name: "Americano", image: "americano.jpg", temp: "Hot",
+        desc: "Smooth and mellow, made by adding hot water to espresso for a lighter yet full-bodied cup. Simple, honest, and endlessly satisfying.",
+        notes: ["Bold", "Smooth", "Earthy", "Full-Bodied", "Clean Finish"],
+        specs: [
+          { label: "Method",                value: "Espresso + Hot Water" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Hot Water",             value: "120ml at 90°C" },
+          { label: "Brew Time",             value: "5 min" }
+        ],
+        steps: [
+          { num: "01", title: "Pull a Double Espresso Shot", desc: "Grind 18g of beans fine, tamp evenly, and extract 36ml in 25–30 seconds." },
+          { num: "02", title: "Heat the Water",              desc: "Bring 120ml of filtered water to just below boiling — around 90°C. Do not use a full boil." },
+          { num: "03", title: "Combine and Serve",           desc: "Add hot water to a pre-warmed mug first, then pour the espresso shot on top to preserve the crema." }
+        ]
+      },
+      {
+        name: "Flat White", image: "flatwhite.jpg", temp: "Hot",
+        desc: "Velvety and creamy with a strong coffee taste and a fine, silky milk texture poured over a ristretto base. Concentrated, smooth, and deeply satisfying.",
+        notes: ["Creamy", "Velvety", "Intense", "Smooth", "Silky Finish"],
+        specs: [
+          { label: "Method",                value: "Ristretto + Steamed Milk" },
+          { label: "Espresso",              value: "Ristretto (Short Pull)" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "30ml" },
+          { label: "Whole Milk",            value: "120ml at 60–65°C" },
+          { label: "Brew Time",             value: "8 min" }
+        ],
+        steps: [
+          { num: "01", title: "Pull a Ristretto", desc: "Grind 18g of beans very fine and extract a short, concentrated 30ml shot in 20–25 seconds for a sweeter, more intense base." },
+          { num: "02", title: "Pour Cold Milk",   desc: "Fill your steaming pitcher with 120ml of cold whole milk. Full-fat milk is essential for the velvety texture." },
+          { num: "03", title: "Steam the Milk",   desc: "Steam to 60–65°C, introducing minimal air to create a fine, dense microfoam. Avoid large bubbles — the texture should be silky and glossy." },
+          { num: "04", title: "Swirl and Tap",    desc: "Tap the pitcher firmly on the counter and swirl to integrate the foam into a smooth, mirror-like consistency." },
+          { num: "05", title: "Pour and Serve",   desc: "Pour the steamed milk steadily over the ristretto in one fluid motion, finishing with a thin, even layer of foam on top." }
+        ]
+      },
+      {
+        name: "Mocha", image: "mocha.png", temp: "Hot or Iced",
+        desc: "A rich meeting of espresso, steamed milk, and deep cocoa. Indulgent and warming, with just enough bitterness to keep it honest.",
+        notes: ["Chocolatey", "Rich", "Bittersweet", "Creamy", "Indulgent"],
+        specs: [
+          { label: "Method",                value: "Espresso + Steamed Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "150ml at 60–65°C" },
+          { label: "Chocolate Syrup",       value: "2 tbsp" }
+        ],
+        steps: [
+          { num: "01", title: "Add the Chocolate", desc: "Spoon 2 tbsp of chocolate syrup or cocoa powder into the bottom of a pre-warmed mug or glass." },
+          { num: "02", title: "Pull the Espresso", desc: "Grind 18g of beans fine, tamp evenly, and extract 36ml directly over the chocolate. Stir to form a smooth, glossy paste." },
+          { num: "03", title: "Steam the Milk",    desc: "Steam 150ml of whole milk to 60–65°C with a light, creamy foam. For iced, skip steaming and use cold milk over ice instead." },
+          { num: "04", title: "Combine",           desc: "Pour the steamed milk steadily over the espresso-chocolate base. For iced, fill the glass with ice before pouring." },
+          { num: "05", title: "Finish and Serve",  desc: "Top with whipped cream and an optional drizzle of chocolate syrup. Serve immediately." }
+        ]
+      },
+      {
+        name: "Affogato", image: "affogato.jpg", temp: "Hot & Cold",
+        desc: "A simple Italian dessert coffee. A hot espresso shot poured over cold, creamy vanilla ice cream. Two ingredients, one perfect contrast of hot and cold, bitter and sweet.",
+        notes: ["Espresso", "Vanilla", "Creamy", "Bittersweet", "Indulgent"],
+        specs: [
+          { label: "Method",            value: "Espresso over Ice Cream" },
+          { label: "Espresso",          value: "Double Shot" },
+          { label: "Espresso Beans",    value: "18g" },
+          { label: "Filtered Water",    value: "36ml for shot" },
+          { label: "Vanilla Ice Cream", value: "1–2 scoops" },
+          { label: "Brew Time",         value: "3 min" }
+        ],
+        steps: [
+          { num: "01", title: "Scoop the Ice Cream",    desc: "Place 1–2 generous scoops of vanilla ice cream into a chilled glass or bowl. Keep it cold until ready to serve." },
+          { num: "02", title: "Pull the Espresso Shot", desc: "Extract a fresh, hot 36ml double espresso immediately before serving. Timing is everything — do not let it cool." },
+          { num: "03", title: "Pour and Serve at Once", desc: "Pour the hot espresso directly over the ice cream. Serve immediately while the contrast between hot and cold remains." }
+        ]
+      },
+      {
+        name: "Caramel Macchiato", image: "caramel-macchiato.png", temp: "Iced",
+        desc: "Sweet and beautifully layered — vanilla milk, espresso, and a generous caramel drizzle over ice.",
+        notes: ["Sweet", "Caramel", "Vanilla", "Rich", "Layered"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "200ml, chilled" },
+          { label: "Vanilla Syrup",         value: "2 pumps (~15ml)" },
+          { label: "Caramel Sauce",         value: "1 tbsp, for drizzle" },
+          { label: "Brew Time",             value: "8 min" }
+        ],
+        steps: [
+          { num: "01", title: "Add Vanilla and Milk",        desc: "Pour 2 pumps of vanilla syrup into a tall glass, then add 200ml of chilled whole milk." },
+          { num: "02", title: "Add Ice",                     desc: "Fill the glass generously with ice cubes, leaving 4–5 cm of space at the top." },
+          { num: "03", title: "Pull a Double Espresso Shot", desc: "Grind 18g of beans fine, tamp evenly, and extract 36ml in 25–30 seconds." },
+          { num: "04", title: "Layer the Espresso",          desc: "Slowly pour the espresso over the back of a spoon held just above the ice so it layers beautifully over the milk." },
+          { num: "05", title: "Drizzle and Serve",           desc: "Finish with a generous drizzle of caramel sauce over the top and serve immediately." }
+        ]
+      },
+      {
+        name: "Vanilla Latte", image: "vanilla-latte.jpg", temp: "Iced",
+        desc: "Smooth and lightly sweet with a clean vanilla flavor and creamy cold milk over ice. A refreshing twist on the classic latte, made for warm days and easy mornings.",
+        notes: ["Sweet", "Creamy", "Vanilla", "Smooth", "Refreshing"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "200ml, chilled" },
+          { label: "Vanilla Syrup",         value: "2 pumps (~15ml)" },
+          { label: "Brew Time",             value: "5 min" }
+        ],
+        steps: [
+          { num: "01", title: "Prepare the Glass",           desc: "Add 2 pumps of vanilla syrup to the bottom of a tall glass, then fill generously with ice cubes." },
+          { num: "02", title: "Pour the Milk",               desc: "Pour 200ml of chilled whole milk over the ice, leaving 4–5 cm of space at the top for the espresso." },
+          { num: "03", title: "Pull a Double Espresso Shot", desc: "Grind 18g of beans fine, tamp evenly, and extract 36ml in 25–30 seconds. Let it rest for 30 seconds." },
+          { num: "04", title: "Pour and Serve",              desc: "Slowly pour the espresso over the back of a spoon to layer it on top of the milk. Stir gently and serve immediately." }
+        ]
+      },
+      {
+        name: "Spanish Latte", image: "spanish-latte.png", temp: "Iced",
+        desc: "Rich and creamy with a natural sweetness from condensed milk layered beneath bold espresso and cold milk. Sweet, smooth, and deeply satisfying.",
+        notes: ["Sweet", "Rich", "Creamy", "Bold", "Smooth Finish"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "150ml, cold" },
+          { label: "Condensed Milk",        value: "2 tbsp" }
+        ],
+        steps: [
+          { num: "01", title: "Layer the Condensed Milk", desc: "Spoon 2 tbsp of sweetened condensed milk into the bottom of a tall glass. This forms the sweet base that slowly blends as you drink." },
+          { num: "02", title: "Add Ice and Milk",         desc: "Fill the glass with ice, then pour 150ml of cold whole milk over it, leaving space at the top for the espresso." },
+          { num: "03", title: "Pull the Espresso",        desc: "Grind 18g of beans fine, tamp evenly, and extract a fresh 36ml double shot in 25–30 seconds." },
+          { num: "04", title: "Pour and Serve",           desc: "Slowly pour the espresso over the back of a spoon to create a layered look. Stir gently before drinking and serve immediately." }
+        ]
+      },
+      {
+        name: "Cinnamon Latte", image: "cinnamon-latte.png", temp: "Iced",
+        desc: "Warm cinnamon spice blended into a creamy, slightly sweet iced coffee with a fragrant finish.",
+        notes: ["Spiced", "Cinnamon", "Creamy", "Fragrant", "Slightly Sweet"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "200ml, chilled" },
+          { label: "Cinnamon Syrup",        value: "2 pumps" },
+          { label: "Ground Cinnamon",       value: "A pinch, to finish" },
+          { label: "Ice",                   value: "1 cup" }
+        ],
+        steps: [
+          { num: "01", title: "Prepare the Glass", desc: "Add cinnamon syrup to the glass, then fill with ice." },
+          { num: "02", title: "Add Cold Milk",     desc: "Pour cold whole milk over the ice, leaving room for the espresso." },
+          { num: "03", title: "Pull the Espresso", desc: "Extract a fresh 36ml double shot." },
+          { num: "04", title: "Finish and Serve",  desc: "Pour espresso over the milk, dust the top lightly with ground cinnamon, and serve." }
+        ]
+      },
+      {
+        name: "Hazelnut Latte", image: "hazelnut-latte.jpg", temp: "Iced",
+        desc: "Smooth, nutty, and gently sweet — hazelnut syrup brings a toasty warmth to this classic iced latte. Effortless to make, impossible to put down.",
+        notes: ["Nutty", "Sweet", "Toasty", "Smooth", "Creamy Finish"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "200ml, cold" },
+          { label: "Hazelnut Syrup",        value: "2 Pumps" }
+        ],
+        steps: [
+          { num: "01", title: "Prepare the Glass", desc: "Add 2 pumps of hazelnut syrup to the bottom of a tall glass, then fill generously with ice." },
+          { num: "02", title: "Add the Milk",      desc: "Pour 200ml of cold whole milk over the ice, leaving about 4cm of space at the top for the espresso." },
+          { num: "03", title: "Pull the Espresso", desc: "Grind 18g of beans fine, tamp evenly, and extract a fresh 36ml double shot in 25–30 seconds." },
+          { num: "04", title: "Pour and Serve",    desc: "Gently pour the hot espresso over the back of a spoon to float it on top of the milk. Stir once and serve immediately." }
+        ]
+      },
+      {
+        name: "White Mocha", image: "white-mocha.png", temp: "Iced",
+        desc: "Creamy and indulgently sweet with a rich white chocolate base, espresso, and cold milk over ice. A luscious treat that blurs the line between coffee and dessert.",
+        notes: ["Sweet", "Creamy", "White Chocolate", "Indulgent", "Rich"],
+        specs: [
+          { label: "Method",                value: "Espresso + Cold Milk" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Whole Milk",            value: "180ml, chilled" },
+          { label: "White Chocolate Syrup", value: "2 tbsp (~30ml)" },
+          { label: "Brew Time",             value: "5 min" }
+        ],
+        steps: [
+          { num: "01", title: "Add the White Chocolate Syrup", desc: "Pour 2 tbsp of white chocolate syrup into the bottom of a tall glass to form the sweet base." },
+          { num: "02", title: "Add Ice and Milk",              desc: "Fill the glass with ice, then pour in 180ml of chilled whole milk, leaving 4–5 cm of space at the top." },
+          { num: "03", title: "Pull a Double Espresso Shot",   desc: "Grind 18g of beans fine, tamp evenly, and extract 36ml in 25–30 seconds. Let it rest for 30 seconds." },
+          { num: "04", title: "Combine and Serve",             desc: "Pour the espresso over the milk, stir gently to dissolve the syrup throughout, and serve immediately." }
+        ]
+      },
+      {
+        name: "Brown Sugar Espresso", image: "brown-sugar.png", temp: "Cold",
+        desc: "Sweet, bold, and smooth — espresso shaken with brown sugar syrup and poured over oat milk for a caramel-like finish.",
+        notes: ["Brown Sugar", "Caramel", "Oat Milk", "Bold Espresso", "Cinnamon"],
+        specs: [
+          { label: "Method",                value: "Shaken Espresso" },
+          { label: "Espresso",              value: "Double Shot" },
+          { label: "Espresso Beans",        value: "18g" },
+          { label: "Filtered Water (Shot)", value: "36ml" },
+          { label: "Oat Milk",              value: "150ml cold" },
+          { label: "Brown Sugar Syrup",     value: "2 pumps" },
+          { label: "Cinnamon",              value: "A pinch" },
+          { label: "Ice",                   value: "1 cup" },
+          { label: "Brew Time",             value: "8 min" }
+        ],
+        steps: [
+          { num: "01", title: "Pull the Espresso",     desc: "Extract a fresh 36ml double shot into a small cup or shaker. Use immediately while hot." },
+          { num: "02", title: "Add Brown Sugar Syrup", desc: "Pour 2 pumps of brown sugar syrup into the hot espresso and stir until fully dissolved." },
+          { num: "03", title: "Shake with Ice",        desc: "Add a few ice cubes to the shaker with the espresso mixture and shake vigorously for 10–15 seconds until frothy and chilled." },
+          { num: "04", title: "Prepare the Glass",     desc: "Fill a tall glass with fresh ice, then pour 150ml of cold oat milk over it." },
+          { num: "05", title: "Pour and Finish",       desc: "Strain the shaken espresso over the oat milk, dust lightly with cinnamon, and serve immediately." }
+        ]
+      }
+    ];
+
+    const day   = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+    const drink = drinks[day % drinks.length];
+
+    document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    document.getElementById('cotd-name').textContent = drink.name;
+    document.getElementById('cotd-temp').textContent = 'Serving · ' + drink.temp;
+    document.getElementById('cotd-desc').textContent = drink.desc;
+
+    const img = document.getElementById('cotd-image');
+    img.src = '../Drinks/drinks-image/' + drink.image;
+    img.alt = drink.name;
+
+    document.getElementById('cotd-notes').innerHTML = drink.notes
+      .map(n => `<span class="note-tag">${n}</span>`).join('');
+
+    document.getElementById('cotd-specs').innerHTML = drink.specs
+      .map(s => `<div class="spec-block"><p class="spec-label">${s.label}</p><p class="spec-value">${s.value}</p></div>`).join('');
+
+    document.getElementById('cotd-steps').innerHTML = drink.steps
+      .map(s => `<div class="recipe-step"><span class="step-num">${s.num}</span><div class="step-text"><strong>${s.title}</strong>${s.desc}</div></div>`).join('');
+  </script>
+
+</body>
+</html>
